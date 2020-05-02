@@ -1,0 +1,16 @@
+server:
+  port: 4000
+
+spring:
+  devtools:
+    add-properties: true
+  application:
+    name: user-service
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:localhost:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://root:root@localhost:3000/eureka
